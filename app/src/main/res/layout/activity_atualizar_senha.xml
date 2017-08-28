@@ -4,29 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="br.com.inovare.equipe.myapplication.view.View.TelaPrincipal"
-    tools:showIn="@layout/activity_tela_principal"
+    tools:context="br.com.inovare.equipe.myapplication.view.View.AtualizarSenha"
     android:orientation="vertical">
-    <Button
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sair"
-        android:id="@+id/sair"/>
-    <Button
+        android:hint="Senha Atual"
+        android:id="@+id/senhaAtual"/>
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Apagar conta"
-        android:id="@+id/apagarConta"/>
-    <Button
+        android:hint="Nova senha"
+        android:id="@+id/novaSenha"/>
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Atualizar dados"
-        android:id="@+id/telaAtualizar"/>
-    <Button
+        android:hint="Confirmar senha"
+        android:id="@+id/confirmeSenhaNova"/>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Atualizar Senha"
-        android:id="@+id/telaAtualizarSenha"/>
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salvar"
+            android:id="@+id/enviarSenhaNova"/>
+    </LinearLayout>
+
 
 </LinearLayout>

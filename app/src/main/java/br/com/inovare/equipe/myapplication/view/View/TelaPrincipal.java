@@ -20,6 +20,7 @@ public class TelaPrincipal extends AppCompatActivity {
     private Button deletarConta;
     private FirebaseAuth sairSistema;
     private Button telaAtd;
+    private Button atualizarSenha;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,7 @@ public class TelaPrincipal extends AppCompatActivity {
         sair=(Button) findViewById(R.id.sair);
         deletarConta=(Button) findViewById(R.id.apagarConta);
         telaAtd=(Button) findViewById(R.id.telaAtualizar);
+        atualizarSenha=(Button) findViewById(R.id.telaAtualizarSenha);
         sairSistema= ConfiguracaoFirebase.autenticarDados();
         sair.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,14 @@ public class TelaPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(TelaPrincipal.this,AtualizarDados.class);
+                startActivity(intent);
+            }
+        });
+
+        atualizarSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(TelaPrincipal.this,AtualizarSenha.class);
                 startActivity(intent);
             }
         });

@@ -22,7 +22,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".view.View.CadastrarUsuario" />
         <activity android:name=".view.View.ResetSenha" />
-        <activity android:name=".view.View.AtualizarDados"></activity>
+        <activity android:name=".view.View.AtualizarDados" />
+        <activity android:name=".view.View.AtualizarSenha"></activity>
     </application>
 
 </manifest>
