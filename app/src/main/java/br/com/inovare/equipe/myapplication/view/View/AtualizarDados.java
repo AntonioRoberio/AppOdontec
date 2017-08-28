@@ -50,6 +50,7 @@ public class AtualizarDados extends AppCompatActivity {
         reference.child("user").child(id.toString()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                     Usuario u=dataSnapshot.getValue(Usuario.class);
                     nome.setText(u.getNome().toString());
                     estado.setText(u.getEstado().toString());
