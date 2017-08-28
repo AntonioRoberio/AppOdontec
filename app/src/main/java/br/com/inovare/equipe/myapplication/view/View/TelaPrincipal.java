@@ -19,12 +19,14 @@ public class TelaPrincipal extends AppCompatActivity {
     private Button sair;
     private Button deletarConta;
     private FirebaseAuth sairSistema;
+    private Button telaAtd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_principal);
         sair=(Button) findViewById(R.id.sair);
         deletarConta=(Button) findViewById(R.id.apagarConta);
+        telaAtd=(Button) findViewById(R.id.telaAtualizar);
         sairSistema= ConfiguracaoFirebase.autenticarDados();
         sair.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,12 +43,21 @@ public class TelaPrincipal extends AppCompatActivity {
                 apagar();
             }
         });
+
+        telaAtd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(TelaPrincipal.this,AtualizarDados.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void apagar(){
 
         Usuario us=new Usuario();
         us.deletarConta();
+        sairSistema.signOut();
         Intent intent= new Intent(TelaPrincipal.this,MainActivity_Login.class);
         startActivity(intent);
         finish();

@@ -43,6 +43,17 @@ public class Usuario {
         return dadosSalvar;
     }
 
+    public void atualizarDados(){
+        DatabaseReference atualizar=ConfiguracaoFirebase.refernciaBancoFirebase();
+        FirebaseUser user=aut.getCurrentUser();
+        Map<String,Object> up=new HashMap<>();
+        up.put("nome",getNome());
+        up.put("estado",getEstado());
+        up.put("cidade",getCidade());
+        atualizar.child("user").child(String.valueOf(user.getUid().toString())).updateChildren(up);
+
+    }
+
     public void deletarConta(){
         DatabaseReference remover=ConfiguracaoFirebase.refernciaBancoFirebase();
         FirebaseUser user=aut.getCurrentUser();

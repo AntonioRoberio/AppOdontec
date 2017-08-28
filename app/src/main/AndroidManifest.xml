@@ -21,7 +21,8 @@
             android:label="@string/title_activity_tela_principal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".view.View.CadastrarUsuario" />
-        <activity android:name=".view.View.ResetSenha"></activity>
+        <activity android:name=".view.View.ResetSenha" />
+        <activity android:name=".view.View.AtualizarDados"></activity>
     </application>
 
 </manifest>

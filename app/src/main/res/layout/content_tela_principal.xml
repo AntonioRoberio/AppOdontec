@@ -18,5 +18,10 @@
         android:layout_height="wrap_content"
         android:text="Apagar conta"
         android:id="@+id/apagarConta"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Atualizar dados"
+        android:id="@+id/telaAtualizar"/>
 
 </LinearLayout>
