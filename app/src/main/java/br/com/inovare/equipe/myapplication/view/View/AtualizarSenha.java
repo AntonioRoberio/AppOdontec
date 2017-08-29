@@ -23,7 +23,7 @@ import br.com.inovare.equipe.myapplication.view.Model.ConfiguracaoFirebase;
 import br.com.inovare.equipe.myapplication.view.Model.Usuario;
 
 public class AtualizarSenha extends AppCompatActivity {
-    private String pegarSenhaAtual="";
+    private String pegarSenhaAtual;
     private EditText atualSenha;
     private EditText senhaNova;
     private EditText confirmeNovasenha;
@@ -49,6 +49,7 @@ public class AtualizarSenha extends AppCompatActivity {
                 }
             }
         });
+        pegarSenha();
 
     }
 
@@ -63,6 +64,7 @@ public class AtualizarSenha extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Usuario u=dataSnapshot.getValue(Usuario.class);
                 pegarSenhaAtual=u.getSenha().toString();
+
             }
 
             @Override
@@ -75,7 +77,7 @@ public class AtualizarSenha extends AppCompatActivity {
     }
 
     public void atualizarSenha(){
-        if(atualSenha.getText().equals(pegarSenhaAtual.toString())){
+        if(atualSenha.getText().toString().equals(pegarSenhaAtual.toString())){
             Usuario usuario=new Usuario();
             usuario.setSenha(senhaNova.getText().toString());
             aut= ConfiguracaoFirebase.autenticarDados();
